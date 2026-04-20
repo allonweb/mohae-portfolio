@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOHAE | Photographer Park Hae Ju</title>
+    <meta name="description" content="Park Hae Ju's photography portfolio specializing in business events and corporate photography.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app">
+        <!-- Logo Section -->
+        <header class="header">
+            <div class="logo" onclick="closeCategory()" style="cursor: pointer;">
+                <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="30" font-family="'Outfit', sans-serif" font-weight="300" font-size="28" fill="white" letter-spacing="4">MOHAE</text>
+                    <line x1="0" y1="35" x2="120" y2="35" stroke="var(--accent-color)" stroke-width="1" />
+                </svg>
+            </div>
+            <div class="header-right">
+                <button class="close-detail" id="closeBtn" onclick="closeCategory()" style="display: none;">Back to Gallery</button>
+                <div class="author-name">Park Hae Ju</div>
+            </div>
+        </header>
+
+        <div class="depth-container">
+            <!-- Main View with 4 Categories -->
+            <section class="main-view" id="mainView">
+                <div class="category-grid">
+                    <div class="category-item" onclick="openCategory('Business Event')">
+                        <img src="./images/Business Event/1-14.jpg" alt="Business Event" class="category-bg">
+                        <div class="category-content">
+                            <h2 class="category-title">Business Event</h2>
+                            <p class="category-desc">CORPORATE & CONFERENCE</p>
+                        </div>
+                    </div>
+                    <div class="category-item" onclick="openCategory('Company')">
+                        <img src="./images/Company/1-10.jpg" alt="Company" class="category-bg">
+                        <div class="category-content">
+                            <h2 class="category-title">Company</h2>
+                            <p class="category-desc">OFFICE & BRANDING</p>
+                        </div>
+                    </div>
+                    <div class="category-item" onclick="openCategory('People')">
+                        <img src="./images/People/1-33.jpg" alt="People" class="category-bg">
+                        <div class="category-content">
+                            <h2 class="category-title">People</h2>
+                            <p class="category-desc">PORTRAIT & HEADSHOT</p>
+                        </div>
+                    </div>
+                    <div class="category-item" onclick="openCategory('& Other')">
+                        <img src="./images/& Other/1-8.jpg" alt="& Other" class="category-bg">
+                        <div class="category-content">
+                            <h2 class="category-title">& Other</h2>
+                            <p class="category-desc">CREATIVE & MISC</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detail View -->
+            <section class="detail-view" id="detailView">
+                <div class="detail-header">
+                    <h2 id="currentCategoryTitle">Category Title</h2>
+                    <p class="category-desc" id="currentCategoryDesc">SUBTITLE</p>
+                </div>
+                <div class="image-grid" id="imageGrid">
+                    <!-- Images will be loaded via JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightboxImg" class="lightbox-img">
+            </div>
+        </div>
+
+        <!-- Inquiry Buttons -->
+        <div class="cta-buttons">
+            <a href="tel:010-0000-0000" class="cta-btn" title="Phone">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </a>
+            <a href="https://pf.kakao.com/" target="_blank" class="cta-btn" title="KakaoTalk">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 3.134-9 7 0 2.457 1.637 4.62 4.137 5.89l-.92 3.37c-.05.17.06.33.22.33.08 0 .151-.03.201-.08l4.13-2.73c.404.05.814.07 1.232.07 4.97 0 9-3.134 9-7s-4.03-7-9-7z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(rgba(0,0,0,0.8), transparent);
+        }
+        .header .author-name {
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .detail-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .detail-header h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script src="app.js"></script>
+</body>
+</html>
