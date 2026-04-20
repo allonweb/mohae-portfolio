@@ -94,10 +94,10 @@ h1, h2, h3 {
 
 .main-view {
     position: absolute;
-    top: 0;
+    top: 80px; /* Start below header */
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 80px); /* Exact remaining height */
     transition: transform var(--transition-speed) var(--ease), filter var(--transition-speed);
 }
 
@@ -112,7 +112,7 @@ h1, h2, h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: calc(100vh - 80px); /* Fill remaining space exactly */
+    height: 100%; /* Fill the main-view height */
     gap: 1px;
     background-color: rgba(255,255,255,0.1);
 }
@@ -163,10 +163,10 @@ h1, h2, h3 {
 /* Detail View */
 .detail-view {
     position: absolute;
-    top: 0;
+    top: 80px; /* Start below header */
     left: 0;
     width: 100%;
-    height: calc(100vh - 80px); /* Match container */
+    height: calc(100vh - 80px); /* Match remaining height */
     background: var(--bg-color);
     transform: translateY(100%);
     transition: transform var(--transition-speed) var(--ease);
