@@ -13,14 +13,14 @@
     <div id="app">
         <!-- Logo Section -->
         <header class="header">
-            <div class="logo" onclick="closeCategory()" style="cursor: pointer;">
+            <div class="logo" id="logo" style="cursor: pointer;">
                 <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
                     <text x="0" y="30" font-family="'Outfit', sans-serif" font-weight="300" font-size="28" fill="white" letter-spacing="4">MOHAE</text>
                     <line x1="0" y1="35" x2="120" y2="35" stroke="var(--accent-color)" stroke-width="1" />
                 </svg>
             </div>
             <div class="header-right">
-                <button class="close-detail" id="closeBtn" onclick="closeCategory()" style="display: none;">Back to Gallery</button>
+                <button class="close-detail" id="closeBtn" style="display: none;">Back to Gallery</button>
                 <div class="author-name">Park Hae Ju</div>
             </div>
         </header>
@@ -29,28 +29,28 @@
             <!-- Main View with 4 Categories -->
             <section class="main-view" id="mainView">
                 <div class="category-grid">
-                    <div class="category-item" onclick="openCategory('Business Event')">
+                    <div class="category-item" data-category="Business Event">
                         <img src="/images/Business Event/1-14.jpg" alt="Business Event" class="category-bg">
                         <div class="category-content">
                             <h2 class="category-title">Business Event</h2>
                             <p class="category-desc">CORPORATE & CONFERENCE</p>
                         </div>
                     </div>
-                    <div class="category-item" onclick="openCategory('Company')">
+                    <div class="category-item" data-category="Company">
                         <img src="/images/Company/1-79.jpg" alt="Company" class="category-bg">
                         <div class="category-content">
                             <h2 class="category-title">Company</h2>
                             <p class="category-desc">OFFICE & BRANDING</p>
                         </div>
                     </div>
-                    <div class="category-item" onclick="openCategory('People')">
+                    <div class="category-item" data-category="People">
                         <img src="/images/People/1-2.jpg" alt="People" class="category-bg">
                         <div class="category-content">
                             <h2 class="category-title">People</h2>
                             <p class="category-desc">PORTRAIT & HEADSHOT</p>
                         </div>
                     </div>
-                    <div class="category-item" onclick="openCategory('& Other')">
+                    <div class="category-item" data-category="& Other">
                         <img src="/images/& Other/1-8.jpg" alt="& Other" class="category-bg">
                         <div class="category-content">
                             <h2 class="category-title">& Other</h2>
@@ -73,7 +73,7 @@
         </div>
 
         <!-- Lightbox -->
-        <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox" id="lightbox">
             <div class="lightbox-content">
                 <img src="" alt="" id="lightboxImg" class="lightbox-img">
             </div>
@@ -119,6 +119,6 @@
         }
     </style>
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

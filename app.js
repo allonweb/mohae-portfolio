@@ -104,21 +104,44 @@ function closeLightbox() {
     lightbox.classList.remove('active');
 }
 
-// Close sub-view on Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        const lightbox = document.getElementById('lightbox');
-        if (lightbox.classList.contains('active')) {
-            closeLightbox();
-        } else {
-            closeCategory();
-        }
-    }
-});
+// Initialize event listeners when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    // Category selection
+    document.querySelectorAll('.category-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const category = item.getAttribute('data-category');
+            openCategory(category);
+        });
+    });
 
-// Global binding for Vite/Build environment
-window.openCategory = openCategory;
-window.closeCategory = closeCategory;
-window.openLightbox = openLightbox;
-window.closeLightbox = closeLightbox;
+    // Back to gallery (Close detail view)
+    const closeBtn = document.getElementById('closeBtn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeCategory);
+    }
+
+    // Logo click to return to home
+    const logo = document.getElementById('logo');
+    if (logo) {
+        logo.addEventListener('click', closeCategory);
+    }
+
+    // Lightbox close click
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.addEventListener('click', closeLightbox);
+    }
+
+    // Keyboard support (Escape key)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const lightboxEl = document.getElementById('lightbox');
+            if (lightboxEl && lightboxEl.classList.contains('active')) {
+                closeLightbox();
+            } else {
+                closeCategory();
+            }
+        }
+    });
+});
 
