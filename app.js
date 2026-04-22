@@ -8,17 +8,20 @@ const imageData = {
         '1-72.jpg', '1-73.jpg', '1-74.jpg', '1-77.jpg', '1-78.jpg'
     ],
     'Company': [
-        '1-10.jpg', '1-11.jpg', '1-12.jpg', '1-13.jpg', '1-16.jpg', '1-2.jpg', '1-21.jpg', 
-        '1-22.jpg', '1-24.jpg', '1-3.jpg', '1-30.jpg', '1-31.jpg', '1-32.jpg', '1-34.jpg', 
-        '1-4.jpg', '1-40.jpg', '1-42.jpg', '1-43.jpg', '1-44.jpg', '1-48.jpg', '1-49.jpg', 
-        '1-5.jpg', '1-50.jpg', '1-51.jpg', '1-6.jpg', '1-7.jpg', '1-75.jpg', '1-76.jpg', 
-        '1-9.jpg', '1.jpg'
+        '1-79.jpg', '1-80.jpg', '1-81.jpg', '1-82.jpg', '1-83.jpg', '1-84.jpg', '1-85.jpg', 
+        '1-86.jpg', '1-87.jpg', '1-88.jpg', '1-89.jpg', '1-90.jpg', '1-91.jpg', '1-92.jpg', 
+        '1-93.jpg', '1-94.jpg', '1-95.jpg', '1-96.jpg', '1-97.jpg', '1-98.jpg', '1-99.jpg', 
+        '1-100.jpg'
     ],
     'People': [
-        '1-33.jpg', '1-35.jpg', '1-36.jpg', '1-37.jpg', '1-41.jpg'
+        '1-2.jpg', '1-3.jpg', '1-4.jpg', '1-5.jpg', '1-6.jpg', '1-7.jpg', '1-9.jpg', 
+        '1-10.jpg', '1-11.jpg', '1-12.jpg', '1-13.jpg', '1-16.jpg', '1-21.jpg', '1-22.jpg', 
+        '1-24.jpg', '1-30.jpg', '1-31.jpg', '1-32.jpg', '1-34.jpg', '1-40.jpg', '1-42.jpg', 
+        '1-43.jpg', '1-44.jpg', '1-48.jpg', '1-49.jpg', '1-50.jpg', '1-51.jpg', '1-75.jpg', 
+        '1-76.jpg', '1.jpg'
     ],
     '& Other': [
-        '1-8.jpg'
+        '1-8.jpg', '1-33.jpg', '1-35.jpg', '1-36.jpg', '1-37.jpg', '1-41.jpg'
     ]
 };
 
@@ -49,7 +52,7 @@ function openCategory(category) {
         item.className = 'image-item';
         
         // Revised path for images moved into public/images/
-        const imgPath = `./images/${category}/${imgName}`; 
+        const imgPath = `/images/${category}/${imgName}`; 
         
         item.innerHTML = `
             <img src="${imgPath}" alt="${imgName}" loading="lazy">
