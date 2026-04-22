@@ -132,6 +132,15 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.addEventListener('click', closeLightbox);
     }
 
+    // Lightbox close button (X) click
+    const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+    if (lightboxCloseBtn) {
+        lightboxCloseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLightbox();
+        });
+    }
+
     // Keyboard support (Escape key)
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {

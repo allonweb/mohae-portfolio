@@ -42,11 +42,13 @@ body::before {
 }
 
 .header .author-name {
-    font-size: 0.7rem;
-    letter-spacing: 0.4em;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
     white-space: nowrap;
+    opacity: 0.9;
 }
 
 .detail-header {
@@ -179,6 +181,24 @@ h1, h2, h3 {
     transform: translateY(0);
 }
 
+.back-to-gallery {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-bottom: 30px;
+    padding: 0;
+    transition: color 0.3s var(--ease);
+}
+
+.back-to-gallery:hover {
+    color: var(--text-color);
+}
+
+
 .close-detail {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.3);
@@ -259,10 +279,28 @@ h1, h2, h3 {
     opacity: 1;
 }
 
+.lightbox-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    transition: transform 0.3s var(--ease);
+}
+
+.lightbox-close:hover {
+    transform: scale(1.1);
+}
+
 .lightbox-content {
     max-width: 90%;
     max-height: 90%;
+    position: relative;
 }
+
 
 .lightbox-img {
     width: 100%;
@@ -305,6 +343,13 @@ h1, h2, h3 {
 
 /* Responsiveness */
 @media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+    }
+    .header .author-name {
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+    }
     .category-grid {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
@@ -314,6 +359,16 @@ h1, h2, h3 {
     }
     .cta-buttons {
         bottom: 20px;
+        right: 20px;
+    }
+    .detail-view {
+        padding: 40px 20px;
+    }
+    .back-to-gallery {
+        margin-bottom: 20px;
+    }
+    .lightbox-close {
+        top: 20px;
         right: 20px;
     }
 }

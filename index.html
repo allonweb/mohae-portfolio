@@ -20,7 +20,6 @@
                 </svg>
             </div>
             <div class="header-right">
-                <button class="close-detail" id="closeBtn" style="display: none;">Back to Gallery</button>
                 <div class="author-name">Park Hae Ju</div>
             </div>
         </header>
@@ -62,6 +61,10 @@
 
             <!-- Detail View -->
             <section class="detail-view" id="detailView">
+                <button class="back-to-gallery" id="closeBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;"><path d="M15 18l-6-6 6-6"/></svg>
+                    Back to Gallery
+                </button>
                 <div class="detail-header">
                     <h2 id="currentCategoryTitle">Category Title</h2>
                     <p class="category-desc" id="currentCategoryDesc">SUBTITLE</p>
@@ -74,6 +77,9 @@
 
         <!-- Lightbox -->
         <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxCloseBtn" title="Close">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
             <div class="lightbox-content">
                 <img src="" alt="" id="lightboxImg" class="lightbox-img">
             </div>
