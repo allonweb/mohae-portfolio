@@ -42,13 +42,14 @@ body::before {
 }
 
 .header .author-name {
-    font-size: 1rem;
-    letter-spacing: 0.2rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
     text-transform: uppercase;
-    color: var(--text-color);
+    color: var(--accent-color);
     font-family: 'Outfit', sans-serif;
     white-space: nowrap;
-    opacity: 0.9;
+    opacity: 1;
+    font-weight: 400;
 }
 
 .detail-header {
@@ -340,6 +341,43 @@ h1, h2, h3 {
     background: var(--accent-color);
     color: black;
 }
+
+/* Tooltip Styles */
+.cta-tooltip {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    background: var(--surface-color);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s var(--ease);
+    pointer-events: none;
+    z-index: 60;
+}
+
+.cta-tooltip.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.cta-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 25px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--surface-color) transparent transparent transparent;
+}
+
 
 /* Responsiveness */
 @media (max-width: 768px) {

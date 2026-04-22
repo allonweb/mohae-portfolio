@@ -152,5 +152,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Floating CTA interaction (Desktop: Tooltip & Copy, Mobile: Direct Action)
+    document.querySelectorAll('.cta-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const isMobile = window.innerWidth <= 768;
+            if (!isMobile) {
+                e.preventDefault();
+                const info = btn.getAttribute('data-info');
+                
+                // Show tooltip and copy
+                showTooltip(btn, info);
+                copyToClipboard(info);
+            }
+        });
+    });
+
+    function showTooltip(btn, text) {
+        // Remove existing tooltips first
+        document.querySelectorAll('.cta-tooltip').forEach(t => t.remove());
+
+        const tooltip = document.createElement('div');
+        tooltip.className = 'cta-tooltip';
+        tooltip.innerText = `${text} (Copied!)`;
+        btn.parentElement.appendChild(tooltip);
+
+        // Trigger animation
+        setTimeout(() => tooltip.classList.add('active'), 10);
+
+        // Hide after 2 seconds
+        setTimeout(() => {
+            tooltip.classList.remove('active');
+            setTimeout(() => tooltip.remove(), 300);
+        }, 2000);
+    }
+
+    async function copyToClipboard(text) {
+        try {
+            await navigator.clipboard.writeText(text);
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
 });
 
