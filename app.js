@@ -115,3 +115,10 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// Global binding for Vite/Build environment
+window.openCategory = openCategory;
+window.closeCategory = closeCategory;
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+
