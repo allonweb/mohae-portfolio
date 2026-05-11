@@ -60,8 +60,8 @@ function openCategory(category) {
         const item = document.createElement('div');
         item.className = 'image-item';
         
-        // Revised path for images moved into public/images/
-        const imgPath = `public/images/${category}/${imgName}`; 
+        // Revised path for production (Vite serves contents of public/ from root)
+        const imgPath = `images/${category}/${imgName}`; 
         
         item.innerHTML = `
             <img src="${imgPath}" alt="${imgName}" loading="lazy">
