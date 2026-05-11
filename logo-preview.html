@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Comparison | MOHAE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .comparison-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 80px 40px 40px;
+            background: #0a0a0a;
+            min-height: 100vh;
+        }
+        .header-preview {
+            position: relative;
+            height: 140px;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .label {
+            color: #d4af37;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .logo-img {
+            max-height: 120px; /* 기존 80px에서 1.5배 확대 */
+            width: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            filter: contrast(1.1);
+        }
+        .author-name {
+            font-size: 1.4rem;
+            letter-spacing: 0.4rem;
+            text-transform: uppercase;
+            color: #d4af37;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+        }
+
+        /* Light Header Styling */
+        .header-preview.light {
+            background: #ffffff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .header-preview.light .author-name {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #fff;
+            margin: 60px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .desc-text {
+            color: #a0a0a0;
+            margin-bottom: 40px;
+            font-size: 1rem;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="comparison-container">
+        <h2 class="section-title">✨ Proposed White Header (투명 로고 적용)</h2>
+        <p class="desc-text">배경색을 완전히 제거하고 화이트 헤더에 적용한 시안입니다. 로고 고유의 결이 살아나며 훨씬 고급스러운 갤러리 분위기를 연출합니다.</p>
+        
+        <div>
+            <div class="label" style="color: #666;">Option 1: Glossy Cloud</div>
+            <div class="header-preview light">
+                <div class="logo-box"><img src="public/images/logos/logo1_clean.png" class="logo-img"></div>
+                <div class="header-right"><div class="author-name">Park Hae Ju</div></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <div class="label" style="color: #666;">Option 2: Deep Organic Shape</div>
+            <div class="header-preview light">
+                <div class="logo-box"><img src="public/images/logos/logo2_clean.png" class="logo-img"></div>
+                <div class="header-right"><div class="author-name">Park Hae Ju</div></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <div class="label" style="color: #666;">Option 3: Camera Shutter & Leaf</div>
+            <div class="header-preview light">
+                <div class="logo-box"><img src="public/images/logos/logo3_clean.png" class="logo-img"></div>
+                <div class="header-right"><div class="author-name">Park Hae Ju</div></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <div class="label" style="color: #666;">Option 4: Wave & Leaf Minimal</div>
+            <div class="header-preview light">
+                <div class="logo-box"><img src="public/images/logos/logo4_clean.png" class="logo-img"></div>
+                <div class="header-right"><div class="author-name">Park Hae Ju</div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

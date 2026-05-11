@@ -43,6 +43,15 @@ function openCategory(category) {
     titleEl.innerText = category;
     descEl.innerText = categoryDescriptions[category] || 'PHOTOGRAPHY';
     
+    // Update active state in sub-nav
+    document.querySelectorAll('.sub-nav-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
     // Clear and populate grid
     imageGrid.innerHTML = '';
     const images = imageData[category] || [];
@@ -52,7 +61,7 @@ function openCategory(category) {
         item.className = 'image-item';
         
         // Revised path for images moved into public/images/
-        const imgPath = `/images/${category}/${imgName}`; 
+        const imgPath = `public/images/${category}/${imgName}`; 
         
         item.innerHTML = `
             <img src="${imgPath}" alt="${imgName}" loading="lazy">
@@ -110,6 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.category-item').forEach(item => {
         item.addEventListener('click', () => {
             const category = item.getAttribute('data-category');
+            openCategory(category);
+        });
+    });
+
+    // Sub-navigation clicks
+    document.querySelectorAll('.sub-nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.getAttribute('data-category');
             openCategory(category);
         });
     });
@@ -193,6 +210,27 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (err) {
             console.error('Failed to copy: ', err);
         }
+    }
+
+    // Scroll to Top Logic
+    const detailView = document.getElementById('detailView');
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    if (detailView && scrollTopBtn) {
+        detailView.addEventListener('scroll', () => {
+            if (detailView.scrollTop > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            detailView.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     }
 });
 
